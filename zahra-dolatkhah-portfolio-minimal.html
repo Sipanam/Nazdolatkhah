@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zahra Dolatkhah | CV</title>
+  <meta name="description" content="Minimal portfolio website for Zahra Dolatkhah, J.D. candidate at UC Irvine School of Law." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root,[data-theme="light"]{
+      --text-xs:clamp(.75rem,.72rem + .15vw,.82rem);
+      --text-sm:clamp(.88rem,.84rem + .18vw,.96rem);
+      --text-base:clamp(1rem,.97rem + .14vw,1.05rem);
+      --text-lg:clamp(1.1rem,1rem + .35vw,1.28rem);
+      --text-xl:clamp(1.45rem,1.2rem + .8vw,1.9rem);
+      --text-2xl:clamp(2rem,1.6rem + 1vw,2.6rem);
+      --space-1:.25rem;--space-2:.5rem;--space-3:.75rem;--space-4:1rem;--space-5:1.25rem;--space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;--space-12:3rem;--space-16:4rem;
+      --color-bg:#f7f4ef;--color-surface:#fcfbf8;--color-surface-2:#f1ece5;--color-border:#d8d1c8;--color-divider:#e2dbd3;
+      --color-text:#201d19;--color-text-muted:#6c655d;--color-text-faint:#9b9388;--color-text-inverse:#fcfaf6;
+      --color-primary:#1d4f56;--color-primary-hover:#143a3f;
+      --radius-sm:.4rem;--radius-md:.8rem;--radius-lg:1.2rem;--radius-full:999px;
+      --shadow-sm:0 1px 2px rgba(20,16,10,.05);--shadow-md:0 14px 30px rgba(20,16,10,.07);
+      --content:980px;--font-display:'Cormorant Garamond', serif;--font-body:'Inter', system-ui, sans-serif;--transition:180ms cubic-bezier(.16,1,.3,1);
+    }
+    [data-theme="dark"]{
+      --color-bg:#151412;--color-surface:#1b1a18;--color-surface-2:#23211e;--color-border:#38342f;--color-divider:#302d29;
+      --color-text:#efebe4;--color-text-muted:#b5aea4;--color-text-faint:#8f887e;--color-text-inverse:#171513;
+      --color-primary:#79aeb4;--color-primary-hover:#98c2c7;
+      --shadow-sm:0 1px 2px rgba(0,0,0,.18);--shadow-md:0 12px 28px rgba(0,0,0,.25);
+    }
+    *,:before,:after{box-sizing:border-box;margin:0;padding:0}
+    html{-webkit-text-size-adjust:none;text-size-adjust:none;scroll-behavior:smooth}
+    body{font-family:var(--font-body);font-size:var(--text-base);line-height:1.65;background:var(--color-bg);color:var(--color-text)}
+    a{text-decoration:none;color:inherit;transition:color var(--transition),background var(--transition),border-color var(--transition)}
+    button{font:inherit;border:none;background:none;color:inherit;cursor:pointer}
+    img,svg{display:block;max-width:100%;height:auto}
+    :focus-visible{outline:2px solid var(--color-primary);outline-offset:3px;border-radius:var(--radius-sm)}
+    .skip-link{position:absolute;left:-9999px}.skip-link:focus{left:1rem;top:1rem;background:var(--color-surface);padding:.75rem 1rem;border-radius:var(--radius-md);z-index:50}
+    .container{width:min(calc(100% - 2rem),var(--content));margin-inline:auto}
+    .site-header{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--color-bg) 90%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid transparent}
+    .site-header.scrolled{border-color:var(--color-divider)}
+    .nav{display:flex;justify-content:space-between;align-items:center;gap:var(--space-4);padding:1rem 0}
+    .brand{display:flex;align-items:center;gap:.75rem;font-size:var(--text-sm);font-weight:600;letter-spacing:.02em}
+    .brand-mark{width:2.15rem;height:2.15rem;border:1px solid var(--color-border);border-radius:50%;display:grid;place-items:center;background:var(--color-surface)}
+    .brand-mark svg{width:1rem;height:1rem}
+    .nav-links{display:flex;gap:1.1rem;font-size:var(--text-sm);color:var(--color-text-muted)}
+    .nav-links a:hover,.nav-links a.active{color:var(--color-text)}
+    .actions{display:flex;align-items:center;gap:.7rem}
+    .theme-toggle,.menu-toggle{width:2.55rem;height:2.55rem;border:1px solid var(--color-border);border-radius:50%;display:grid;place-items:center;background:var(--color-surface)}
+    .menu-toggle{display:none}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:.8rem 1rem;border-radius:var(--radius-full);font-size:var(--text-sm);font-weight:600}
+    .btn-primary{background:var(--color-primary);color:var(--color-text-inverse)}
+    .btn-primary:hover{background:var(--color-primary-hover)}
+    .btn-ghost{border:1px solid var(--color-border);background:var(--color-surface)}
+    .btn-ghost:hover{background:var(--color-surface-2)}
+
+    .hero{padding:3.5rem 0 3rem}
+    .hero-wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:var(--space-6);align-items:start}
+    .hero-card,.panel,.item,.mini-card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg)}
+    .hero-card{padding:var(--space-8);box-shadow:var(--shadow-md)}
+    .eyebrow{font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.16em;color:var(--color-text-muted);font-weight:700}
+    h1{font:600 var(--text-2xl)/.98 var(--font-display);letter-spacing:.01em;margin:.8rem 0 1rem;max-width:12ch}
+    .lead{color:var(--color-text-muted);max-width:48ch}
+    .hero-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.5rem;padding-top:1.25rem;border-top:1px solid var(--color-divider)}
+    .hero-meta strong{display:block;font-size:var(--text-sm);margin-bottom:.15rem}
+    .hero-meta span{font-size:var(--text-xs);color:var(--color-text-muted)}
+    .stack{display:grid;gap:var(--space-4)}
+    .panel{padding:var(--space-6)}
+    .portrait{aspect-ratio:4/5;border-radius:calc(var(--radius-lg) - .3rem);background:linear-gradient(180deg,#d9d2c8 0%,#c3b7a8 34%,#9b8a79 70%,#675b50 100%);position:relative;overflow:hidden}
+    .portrait:before{content:"";position:absolute;left:20%;right:20%;top:13%;height:54%;border-radius:45% 45% 38% 38%;background:linear-gradient(180deg,#f3e7d8 0%,#dfc3a8 100%)}
+    .portrait:after{content:"";position:absolute;left:18%;right:18%;bottom:11%;height:30%;border-radius:46% 46% 18% 18%;background:#453d36}
+    .caption{margin-top:.9rem;font-size:var(--text-xs);color:var(--color-text-muted)}
+
+    main section{padding:2.8rem 0;border-top:1px solid var(--color-divider)}
+    .section-head{display:grid;grid-template-columns:.8fr 1.2fr;gap:var(--space-6);margin-bottom:1.4rem}
+    .section-head h2{font:600 var(--text-xl)/1 var(--font-display)}
+    .section-head p{color:var(--color-text-muted);max-width:54ch}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)}
+    .item,.mini-card{padding:1.2rem 1.2rem 1.15rem}
+    .item h3,.mini-card h3{font-size:var(--text-base);line-height:1.35;margin-bottom:.2rem}
+    .meta{font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.12em;color:var(--color-text-faint);margin-bottom:.8rem}
+    .item p,.mini-card p{font-size:var(--text-sm);color:var(--color-text-muted);max-width:62ch}
+    .chips{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.9rem}
+    .chip{padding:.38rem .62rem;border:1px solid var(--color-border);border-radius:var(--radius-full);font-size:var(--text-xs);color:var(--color-text-muted);background:var(--color-surface-2)}
+    .contact-list{display:grid;gap:.85rem}
+    .contact-row{display:flex;justify-content:space-between;gap:1rem;padding-bottom:.8rem;border-bottom:1px solid var(--color-divider);font-size:var(--text-sm)}
+    .contact-row span{color:var(--color-text-muted)}
+    .footer{padding:2rem 0 3rem;color:var(--color-text-muted);font-size:var(--text-sm)}
+
+    .reveal{opacity:0;transform:translateY(12px);transition:opacity .55s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1)}
+    .reveal.visible{opacity:1;transform:none}
+
+    @media (max-width:900px){
+      .hero-wrap,.section-head,.grid-2,.hero-meta{grid-template-columns:1fr}
+    }
+    @media (max-width:760px){
+      .nav-links{position:absolute;left:1rem;right:1rem;top:calc(100% + .4rem);display:none;flex-direction:column;padding:1rem;background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-md);box-shadow:var(--shadow-md)}
+      .nav-links.open{display:flex}
+      .menu-toggle{display:grid}
+      .hero-card,.panel,.item,.mini-card{padding:1rem}
+      .contact-row{flex-direction:column}
+      h1{max-width:14ch}
+    }
+    @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="top">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Top of page">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.1">
+            <path d="M13 34V14h9.5c5.1 0 8.4 2.7 8.4 6.9 0 2.5-1.3 4.5-3.6 5.6L34 34h-6.3l-5.8-6H19V34H13Z"/>
+            <path d="M19 22.7h3.4c1.9 0 3.1-.9 3.1-2.5 0-1.7-1.1-2.7-3.2-2.7H19v5.2Z"/>
+          </svg>
+        </span>
+        <span>Zahra Dolatkhah</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="actions">
+        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+        <button class="theme-toggle" data-theme-toggle aria-label="Switch theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a class="btn btn-primary" href="mailto:ndolatkh@lawnet.uci.edu">Email</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-wrap">
+        <article class="hero-card reveal">
+          <div class="eyebrow">Curriculum Vitae</div>
+          <h1>Zahra Dolatkhah</h1>
+          <p class="lead">J.D. candidate at UC Irvine School of Law with experience in litigation support, international justice, contracts, and legal research.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.25rem">
+            <a class="btn btn-primary" href="#experience">Experience</a>
+            <a class="btn btn-ghost" href="#contact">Contact</a>
+          </div>
+          <div class="hero-meta">
+            <div><strong>Based in</strong><span>Irvine, CA</span></div>
+            <div><strong>Current degree</strong><span>J.D., expected 2027</span></div>
+            <div><strong>Focus</strong><span>International law & advocacy</span></div>
+          </div>
+        </article>
+        <div class="stack reveal">
+          <article class="panel">
+            <div class="portrait" aria-hidden="true"></div>
+            <p class="caption">Minimal layout, smaller type, and a sharper legal focus.</p>
+          </article>
+          <article class="panel" id="contact">
+            <div class="eyebrow">Contact</div>
+            <div class="contact-list" style="margin-top:1rem">
+              <div class="contact-row"><strong>Email</strong><span><a href="mailto:ndolatkh@lawnet.uci.edu">ndolatkh@lawnet.uci.edu</a></span></div>
+              <div class="contact-row"><strong>Phone</strong><span><a href="tel:+19497759050">(949) 775-9050</a></span></div>
+              <div class="contact-row"><strong>Location</strong><span>Irvine, CA 92617</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>About</h2>
+          <p>A concise profile designed for a clean, classy first impression. It keeps the strongest academic and legal details, while removing items that distract from her current legal trajectory.</p>
+        </div>
+        <div class="grid-2">
+          <article class="mini-card reveal">
+            <h3>Profile</h3>
+            <p>UC Irvine Law J.D. candidate, LL.M. graduate, and multilingual legal professional with cross-border research and practice experience.</p>
+          </article>
+          <article class="mini-card reveal">
+            <h3>Highlights</h3>
+            <p>Scholarships, moot court distinction, human rights clinic work, legal research, and contract drafting across U.S. and international settings.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Experience</h2>
+          <p>Only the most relevant legal roles are shown here for a shorter and stronger presentation.</p>
+        </div>
+        <div class="grid-2">
+          <article class="item reveal">
+            <div class="meta">June 2026 – Present</div>
+            <h3>Legal Intern · Chou Law Group</h3>
+            <p>Subpoenas, record review, pleadings, legal memoranda, and matter coordination with courts, counsel, and clients.</p>
+          </article>
+          <article class="item reveal">
+            <div class="meta">Jan 2025 – Jan 2026</div>
+            <h3>International Justice Clinical Student · UC Irvine Law</h3>
+            <p>Human rights research on Afghanistan, women’s and disability rights, and surveillance-related legal issues.</p>
+          </article>
+          <article class="item reveal">
+            <div class="meta">June 2025 – July 2025</div>
+            <h3>Legal Intern · Hannegan & Tafreshi Injury Law</h3>
+            <p>Personal injury research, client intake support, medical-record organization, and drafting of demand letters.</p>
+          </article>
+          <article class="item reveal">
+            <div class="meta">Oct 2023 – June 2024</div>
+            <h3>Junior Contractual Affairs Specialist · Dana Energy Group</h3>
+            <p>Contract drafting, agreement review, bilingual negotiation support, and comparative benchmarking of energy agreements.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Education</h2>
+          <p>The layout keeps the strongest degrees and the most persuasive distinctions visible at a glance.</p>
+        </div>
+        <div class="grid-2">
+          <article class="mini-card reveal">
+            <h3>UC Irvine School of Law</h3>
+            <p>Juris Doctor, expected May 2027.</p>
+            <div class="chips"><span class="chip">IAWF Scholarship</span><span class="chip">IABA Scholarship</span><span class="chip">Edward Medina Scholarship</span></div>
+          </article>
+          <article class="mini-card reveal">
+            <h3>UC Irvine School of Law</h3>
+            <p>LL.M., May 2025.</p>
+            <div class="chips"><span class="chip">Outstanding Leadership Award</span><span class="chip">LL.M. Class Representative</span></div>
+          </article>
+          <article class="mini-card reveal">
+            <h3>University of Tehran</h3>
+            <p>Master in Oil and Gas Law, 2025.</p>
+            <div class="chips"><span class="chip">Jessup National Champion</span><span class="chip">Moot Court Oralist</span></div>
+          </article>
+          <article class="mini-card reveal">
+            <h3>Azad University</h3>
+            <p>LL.B. / J.D. equivalent, 2022.</p>
+            <div class="chips"><span class="chip">Legal foundation</span><span class="chip">International focus</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="scholarship">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Selected credentials</h2>
+          <p>Short, high-value additions that give more credit without making the page feel crowded.</p>
+        </div>
+        <div class="grid-2">
+          <article class="mini-card reveal">
+            <h3>Publication & presentation</h3>
+            <p>Presented “Human-AI Collaboration in Legal Proceedings: Prospects and Pitfalls” at the USERN International Congress in 2023.</p>
+          </article>
+          <article class="mini-card reveal">
+            <h3>Professional strengths</h3>
+            <p>Persian, Kurmanji, and English; legal translation, advocacy research, international law, and contract work.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">Zahra Dolatkhah · UC Irvine School of Law · <a href="mailto:ndolatkh@lawnet.uci.edu">ndolatkh@lawnet.uci.edu</a></div>
+  </footer>
+
+  <script>
+    (function(){
+      const root=document.documentElement;
+      let theme=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+      root.setAttribute('data-theme',theme);
+      const themeBtn=document.querySelector('[data-theme-toggle]');
+      const setIcon=()=>{themeBtn.innerHTML=theme==='dark'?'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>':'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';};
+      setIcon();
+      themeBtn.addEventListener('click',()=>{theme=theme==='dark'?'light':'dark';root.setAttribute('data-theme',theme);setIcon();});
+      const menuBtn=document.querySelector('.menu-toggle');
+      const nav=document.querySelector('.nav-links');
+      menuBtn.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));});
+      const header=document.querySelector('.site-header');
+      window.addEventListener('scroll',()=>header.classList.toggle('scrolled',window.scrollY>8),{passive:true});
+      const items=document.querySelectorAll('.reveal');
+      const io=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible');});},{threshold:.12});
+      items.forEach(item=>io.observe(item));
+      const sections=document.querySelectorAll('main section[id]');
+      const links=document.querySelectorAll('.nav-links a');
+      const spy=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){links.forEach(link=>link.classList.toggle('active',link.getAttribute('href')==='#'+entry.target.id));}});},{threshold:.45});
+      sections.forEach(section=>spy.observe(section));
+    })();
+  </script>
+</body>
+</html>
